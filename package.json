@@ -1,0 +1,34 @@
+{
+  "name": "sellat-cli",
+  "version": "0.1.0",
+  "description": "Command-line client for the SELLAT proof-of-existence API. Hashes locally — your files never leave your machine.",
+  "type": "module",
+  "bin": {
+    "sellat": "bin/sellat.mjs"
+  },
+  "exports": {
+    ".": "./src/api.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18.11"
+  },
+  "keywords": [
+    "timestamping",
+    "proof-of-existence",
+    "integrity",
+    "logs",
+    "blockchain",
+    "polygon",
+    "cli"
+  ],
+  "author": "Cristian Cascante",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skanthemore/sellat-cli.git"
+  },
+  "homepage": "https://sellat.app"
+}

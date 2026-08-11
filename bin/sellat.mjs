@@ -79,6 +79,22 @@ function printStamp(stamp) {
       console.log(`explorer ${stamp.blockchain.explorerUrl}`);
     }
   }
+  if (stamp.proof_v2) {
+    console.log(`v2      ${stamp.proof_v2.state}${describeAnchors(stamp.proof_v2.anchors)}`);
+    if (stamp.proof_v2.artifact_url) {
+      console.log(`proof   ${stamp.proof_v2.artifact_url}`);
+    }
+  }
+}
+
+function describeAnchors(anchors) {
+  if (!Array.isArray(anchors) || anchors.length === 0) {
+    return '';
+  }
+  const parts = anchors
+    .filter((a) => a.txHash)
+    .map((a) => `${a.network} block ${a.blockNumber ?? '…'}`);
+  return parts.length ? ` — ${parts.join(', ')}` : '';
 }
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

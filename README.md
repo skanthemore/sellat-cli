@@ -1,5 +1,7 @@
 # sellat-cli
 
+[![tests](https://github.com/skanthemore/sellat-cli/actions/workflows/tests.yml/badge.svg)](https://github.com/skanthemore/sellat-cli/actions/workflows/tests.yml)
+
 Proof of existence from your terminal. **Zero dependencies.**
 
 ```console

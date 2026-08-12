@@ -12,6 +12,11 @@
   "scripts": {
     "test": "node --test"
   },
+  "files": [
+    "bin",
+    "src",
+    "examples"
+  ],
   "engines": {
     "node": ">=18.11"
   },

@@ -4,15 +4,15 @@
 # This is the pattern sellat.app runs on its own infrastructure: every hour
 # the web server's access log is rotated and its SHA-256 is stamped, so each
 # archived log file has independent proof of what it contained and when.
-# Because stamps are chain-linked per API client, the sequence of hourly
-# stamps forms an append-only chain — removing or altering one archived hour
-# becomes detectable.
+# Every batch root is anchored on Polygon and attested on Bitcoin, so each
+# archived hour has a proof nobody can backdate — removing or altering one
+# archived file later leaves bytes that match no proof.
 #
 # Usage (e.g. from cron, hourly):
 #   SELLAT_API_TOKEN=... ./seal-log.sh /var/log/nginx/access.log /var/log/nginx/archive
 #
-# Requires: sellat-cli in PATH (npm install -g sellat-cli), and a token from
-# https://sellat.app/developers
+# Requires: sellat-cli in PATH (npm install -g sellat-cli), and an API key
+# created from your account at https://sellat.app/dashboard#api-keys
 
 set -euo pipefail
 
@@ -29,4 +29,4 @@ cp "$LOG_FILE" "$ARCHIVED"
 truncate -s 0 "$LOG_FILE"
 
 # The archived file is hashed locally; only the SHA-256 is submitted.
-sellat stamp "$ARCHIVED" --label "log/$STAMP_NAME"
+sellat stamp "$ARCHIVED" --name "log/$STAMP_NAME"

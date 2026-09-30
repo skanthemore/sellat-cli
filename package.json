@@ -1,7 +1,7 @@
 {
   "name": "sellat-cli",
-  "version": "0.1.0",
-  "description": "Command-line client for the SELLAT proof-of-existence API. Hashes locally — your files never leave your machine.",
+  "version": "0.2.0",
+  "description": "Command-line client for the SELLAT API v2: proof of existence with Polygon, Bitcoin and the FNMT qualified eIDAS seal. Hashes locally \u2014 your files never leave your machine.",
   "type": "module",
   "bin": {
     "sellat": "bin/sellat.mjs"
@@ -21,13 +21,19 @@
     "node": ">=18.11"
   },
   "keywords": [
-    "timestamping",
-    "proof-of-existence",
+    "bitcoin",
+    "blockchain",
+    "cli",
+    "eidas",
     "integrity",
     "logs",
-    "blockchain",
+    "merkle",
+    "opentimestamps",
     "polygon",
-    "cli"
+    "proof-of-existence",
+    "qualified-timestamp",
+    "rfc3161",
+    "timestamping"
   ],
   "author": "Cristian Cascante",
   "license": "MIT",

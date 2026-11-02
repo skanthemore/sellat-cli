@@ -79,6 +79,17 @@ Submitting the same file twice returns the proof that already exists. A
 retry with the same `Idempotency-Key` (see the library) never creates a
 second proof or spends a second seal.
 
+## As an agent skill
+
+`skills/sellat/` is an [Agent Skill](https://agentskills.io): it teaches an AI
+agent (Claude Code, Codex, Cursor, Gemini CLI, Copilot and other clients of
+the open standard) when and how to create and verify Sellat proofs, with this
+CLI or, without an account, paying per call over x402.
+
+```console
+$ npx skills add skanthemore/sellat-cli --skill sellat
+```
+
 ## As a library
 
 ```js

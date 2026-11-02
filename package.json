@@ -1,6 +1,6 @@
 {
   "name": "sellat-cli",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Command-line client for the SELLAT API v2: proof of existence with Polygon, Bitcoin and the qualified eIDAS seal. Hashes locally \u2014 your files never leave your machine.",
   "type": "module",
   "bin": {

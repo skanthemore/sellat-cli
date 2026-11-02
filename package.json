@@ -1,7 +1,7 @@
 {
   "name": "sellat-cli",
   "version": "0.2.0",
-  "description": "Command-line client for the SELLAT API v2: proof of existence with Polygon, Bitcoin and the FNMT qualified eIDAS seal. Hashes locally \u2014 your files never leave your machine.",
+  "description": "Command-line client for the SELLAT API v2: proof of existence with Polygon, Bitcoin and the qualified eIDAS seal. Hashes locally \u2014 your files never leave your machine.",
   "type": "module",
   "bin": {
     "sellat": "bin/sellat.mjs"

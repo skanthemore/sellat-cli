@@ -6,7 +6,7 @@
  *   POST   /api/v2/proofs                      { hash, name?, metadata?, qualified? } → 201
  *   GET    /api/v2/proofs/:id                   state, anchors, Bitcoin, seal, URLs
  *   GET    /api/v2/proofs?limit&cursor          the account's proofs
- *   POST   /api/v2/proofs/:id/qualified         the FNMT-RCM qualified seal (eIDAS)
+ *   POST   /api/v2/proofs/:id/qualified         the qualified eIDAS seal
  *   GET    /api/v2/proofs/:id/qualified.tsr     the RFC 3161 token
  *   GET    /api/v2/proofs/:id/certificate.pdf   the certificate
  *   GET    /api/v2/proofs/:id/evidence.zip      the evidence package
@@ -112,7 +112,7 @@ export function createClient({
 
   return {
     /**
-     * Create a proof from a SHA-256. `qualified: true` also issues the FNMT
+     * Create a proof from a SHA-256. `qualified: true` also issues the qualified
      * seal in the same call. Returns the proof object (`id`, `state`, `urls`…).
      */
     create({ hash, name, metadata, size, mimeType, qualified, idempotencyKey }) {
@@ -143,7 +143,7 @@ export function createClient({
       return request('GET', `/api/v2/proofs${query ? `?${query}` : ''}`);
     },
 
-    /** The qualified (eIDAS) seal from FNMT-RCM. Spends a seal from the account; 402 when there is none. */
+    /** The qualified eIDAS seal. Spends a seal from the account; 402 when there is none. */
     seal(id) {
       return request('POST', `${proofPath(id)}/qualified`);
     },

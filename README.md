@@ -12,7 +12,7 @@ name      contract.pdf
 state     queued
 hash      9f3c2a…
 bitcoin   pending
-qualified issued · FNMT-RCM · 2026-09-15T10:12:05.000Z
+qualified issued · <authority> · 2026-09-15T10:12:05.000Z
 cert      https://sellat.app/certificate/3b1d…
 
 Accepted. Anchored in minutes — track it with: sellat watch 6f2c9b1e-0d1a-4b9f-8e7c-2a4d5b6c7d8e
@@ -29,8 +29,8 @@ What you get for one hash:
   minutes. A thousand hashes share one transaction, so this costs nothing.
 - **Bitcoin** — every batch root is attested through OpenTimestamps too.
 - **A qualified eIDAS seal** (`--qualified`, or `sellat seal <id>`) — an
-  RFC 3161 timestamp signed by **FNMT-RCM**, a qualified trust service
-  provider on the EU trusted list. Under eIDAS art. 41.2 it carries the
+  RFC 3161 timestamp signed by a qualified trust service provider on the
+  EU trusted list. Under eIDAS art. 41.2 it carries the
   presumption of the accuracy of its date. This is the paid part: it spends
   a seal from your account (one welcome seal, then packs from
   [sellat.app/precios](https://sellat.app/precios)).
@@ -58,7 +58,7 @@ $ sellat stamp <file> [--name <name>] [--meta key=value]... [--qualified] [--sto
 $ sellat stamp --hash <sha256> [--name <name>] [--qualified]   # hash computed elsewhere
 $ sellat status <id>                                         # state, anchors, seal, URLs
 $ sellat watch <id> [--interval <seconds>]                   # poll until anchored
-$ sellat seal <id>                                           # the FNMT-RCM qualified seal
+$ sellat seal <id>                                           # the qualified eIDAS seal
 $ sellat list [--limit <n>] [--cursor <c>]
 $ sellat account                                             # seals left, custody, today's budget
 $ sellat download <id> certificate|evidence|tsr|original [--out <path>] [--lang es|en|de|fr]

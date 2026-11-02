@@ -12,7 +12,7 @@ Usage:
   sellat stamp --hash <sha256> [--name <name>] [--meta key=value]... [--qualified]
   sellat status <id>                      the proof as it stands now
   sellat watch <id> [--interval <s>]      poll until the batch is anchored
-  sellat seal <id>                        add the FNMT-RCM qualified seal (eIDAS)
+  sellat seal <id>                        add the qualified eIDAS seal
   sellat list [--limit <n>] [--cursor <c>]
   sellat account                          seals left, custody, today's budget
   sellat download <id> <certificate|evidence|tsr|original> [--out <path>] [--lang <es|en|de|fr>]

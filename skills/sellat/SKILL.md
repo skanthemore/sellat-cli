@@ -40,7 +40,7 @@ Say this accurately to the user; never overstate it.
 
 ## Route A: with a Sellat account (API key)
 
-The user creates a key at https://sellat.app/developers and exports it as
+The user creates a key at https://sellat.app/keys and exports it as
 `SELLAT_API_TOKEN`. Free accounts get a daily allowance of proofs; qualified
 timestamps are bought on the account.
 
